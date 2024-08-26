@@ -1,0 +1,23 @@
+# Go binary files
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Go test binary
+*_test
+
+# Vendor directory
+/vendor/
+
+# IDE files
+.idea/
+*.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Log files
+*.log
