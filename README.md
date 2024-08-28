@@ -106,9 +106,9 @@ func main() {
 
     // Your API handler
     // Example implementation of middleware validation and chain middleware
-    http.HandleFunc("/api/", logHelloMiddleware(blackey.ValidateAPIKey(config)(yourAPIHandler)))
-    // or http.HandleFunc("/api/", blackey.ValidateAPIKey(config)(logHelloMiddleware(http.HandlerFunc(yourAPIHandler))))
-	http.Handle("/api/create-key", blackey.IsRootKey(config)(http.HandlerFunc(createAPIKeyHandler)))
+    http.Handle("/api/", logHelloMiddleware(blackey.ValidateAPIKey(config)(yourAPIHandler)))
+    // or http.Handle("/api/", blackey.ValidateAPIKey(config)(logHelloMiddleware(http.HandlerFunc(yourAPIHandler))))
+    http.Handle("/api/create-key", blackey.IsRootKey(config)(http.HandlerFunc(createAPIKeyHandler)))
 
     http.ListenAndServe(":8080", nil)
 }
@@ -143,7 +143,7 @@ Blackey is pretty flexible:
 
 I'd love to hear from you! Here's how you can help:
 
-1. If you find a problem, open an issue on GitHub
+1. If you find a problem or idea, open an issue on GitHub
 
 Want to contribute? Awesome!
 
